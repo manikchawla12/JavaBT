@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../script/employee.js"></script>
+    <style>
+        @import url("../css/style2.css");
+    </style>
+</head>
+<body bgcolor="skyblue">
+    <form onsubmit="return validate()">
+        <div>
+            <label for="id">Id: </label>
+            <input type="number" name="id" placeholder="Enter Id" id="ID">
+            <span id="id_err" style="color: red;font-size: 15px;"></span>
+        </div>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" name="name" placeholder="Enter name" id="name">
+            <span id="name_err" style="color: red; font-size: 15px;"></span>
+        </div>
+       <div>
+        <label for="gender">Gender</label><br>
+        <input type="checkbox" name="gender"  id="gender">
+        <label for="male">Male</label>
+        <input type="checkbox" name="gender" id="gender">
+        <label for="female">Female</label>
+    </div> 
+        <div>
+       
+            <input type="submit" class="button" style="background-color: green;"/>
+            <input type="reset" class="button" style="background-color: orangered;"/>
+        </div>
+    </form>
+</body>
+</html>

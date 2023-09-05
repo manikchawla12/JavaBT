@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+        
+        label{
+            padding: 10px;
+        }
+        .inputDiv{
+            padding: 10px;
+            border: solid white 2px;
+        }
+        
+    </style>
+    <script>
+        function man(){
+            var name=document.getElementById('name').value;
+            var a=document.getElementById('price').value;
+            var b=document.getElementById('quan').value;
+            document.getElementById('total').value=parseFloat(a)*parseFloat(b);
+        }
+    </script>
+  </head>
+  <body>
+    <div style="margin:auto; width: 30%;margin-top: 50px; background-color:pink; padding: 30px;border: solid 2px;">
+      <div>
+        <div style="float: left">
+          <label for="name">Product Name</label>
+        </div>
+        <div class="inputDiv">
+          <input type="text" id="name" name="name" placeholder="Product Name" />
+        </div>
+      </div>
+      <div>
+        <div style="float: left">
+          <label for="price">Product Price in Rs.</label>
+        </div>
+        <div class="inputDiv">
+          <input
+            type="text"
+            id="price"
+            name="price"
+            placeholder="Product Price"
+          />
+        </div>
+      </div>
+      <div>
+        <div style="float: left">
+          <label for="quan" style="width: 100px">Quality</label>
+        </div>
+        <div class="inputDiv">
+          <input
+            type="number"
+            id="quan"
+            name="quan"
+            placeholder="Enter quantity"
+          />
+        </div>
+      </div>
+      <div>
+        <div style="float: left; border: solid white;" >
+          <label for="total">Total Price in Rs.</label>
+        </div>
+        <div class="inputDiv">
+          <input type="text" id="total" name="total" />
+        </div>
+      </div>
+      <div>
+        <button id="submit" onclick="man()">Submit</button>
+    </div>
+</div>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html:5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        label{
+            width: 120px;
+            float: left;
+        }
+        input{
+            width: 120px;
+            margin-bottom: 3px;
+        }
+
+        form{
+            border: double 10px ;
+            width: 300px;
+            padding: 20px;
+            margin: auto;
+            background-color:palevioletred;   
+            margin-top: 20px;  
+        }
+    </style>
+</head>
+<body  style="background-image: url(/images/download\ \(1\).jfif),url(/images/download.jfif); 
+background-repeat:no-repeat,repeat; background-size: 300px,100px;background-attachment: fixed,fixed;">
+    <form action="" style="border-radius: 20px;box-shadow:20px 30px 65px rgb(187, 16, 187);
+    transform: translate(25px,50px);transform: scale(1,1);transform: skew(5deg,5deg);">
+        <div>
+        <label for="id">Enter Id</label>
+   <input type="text" name="id" id="id"> </div>
+
+   <div>     <label for="name">Enter Name</label>
+        <input type="text" name="name" id="name">
+    </div>
+    <div><label for="salary">Enter Salary</label>
+        <input type="text" name="salary" id="salary">
+    </div>
+    
+    <div>
+        <div >Select Hobbies</div>
+    
+        <div><input type="checkbox" name="Hobbies" id="">Movie</div>
+        <div><input type="checkbox" name="Hobbies" id="">flowering</div>
+        <div><input type="checkbox" name="Hobbies" id="">Reading</div>
+        <div><input type="checkbox" name="Hobbies" id="">Touring</div>
+    </div>
+    <div>
+        <label>Select Language</label>
+        <select name="lang" >
+            <option value=""></option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Punjabi">Punjabi</option>
+            <option value="Marathi">Marathi</option>
+        </select>
+    </div>
+    <div>
+        <label for="location" >Select Location</label>
+        <select name="location" id="location" multiple>
+            
+            <option value="Noida" >Noida</option>
+            <option value="Delhi" >Delhi</option>
+            <option value="Punjab">Punjab</option>
+            <option value="Mumbai">Mumbai</option>
+        </select>
+    </div>
+    <br>
+    <div>
+        <label>Select Sector</label><br>
+        <div>
+            <input type="radio" name="sector" id="" value="Public"> Public
+        </div>
+        <div>
+            <input type="radio" name="sector" id="" value="Private"> Private
+        </div>
+    </div>
+    <div>
+        <label for="Upload">File Upload</label>
+        <input type="file" name="Upload" id="Upload">
+    </div>
+    <div>
+        <input list="state" placeholder="Select state">
+        <datalist id="state">
+            <option value="Haryana"></option>
+            <option value="Punjab"></option>
+            <option value="Bihar"></option>
+            <option value="UP"></option>
+            <option value="Rajathan"></option>
+        </datalist>
+    </div>
+    <div>
+        <label>Search</label>
+        <input type="search">
+    </div>
+    <div>
+       
+        <label>Audio </label>
+        <br>
+    <audio controls><source src="/images/Cheques_192(PagalWorld.cm).mp3" type="audio/ogg"></audio>
+    
+</div><br>  
+    <div>
+       
+        <input type="submit" class="button" style="background-color: green;"/>
+        <input type="reset" class="button" style="background-color: orangered;"/>
+    </div>
+   
+</form>
+</body>
+</html>

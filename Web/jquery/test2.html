@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(function(){
+            $('#addition').click(
+                function(){
+                    if($('#n1').val()=='')
+                    alert('no1 is blank')
+                    else if($('#n2').val()=='')
+                    alert('no.2 is blank')
+                    else{
+                        var a=parseFloat($('#n1').val())
+                        var b=parseFloat($('#n2').val())
+                        $('#result').val(a+b)
+                    }
+                }
+            )
+        })
+        $(function(){
+            $('#substract').click(
+                function(){
+                    if($('#n1').val()=='')
+                    alert('no1 is blank')
+                    else if($('#n2').val()=='')
+                    alert('no.2 is blank')
+                    else{
+                        var a=parseFloat($('#n1').val())
+                        var b=parseFloat($('#n2').val())
+                        $('#result').val(a-b)
+                    }
+                }
+            )
+        })
+        $(function(){
+            $('#multiply').click(
+                function(){
+                    if($('#n1').val()=='')
+                    alert('no1 is blank')
+                    else if($('#n2').val()=='')
+                    alert('no.2 is blank')
+                    else{
+                        var a=parseFloat($('#n1').val())
+                        var b=parseFloat($('#n2').val())
+                        $('#result').val(a*b)
+                    }
+                }
+            )
+        })
+        $(function(){
+            $('#divide').click(
+                function(){
+                    if($('#n1').val()=='')
+                    alert('no1 is blank')
+                    else if($('#n2').val()=='')
+                    alert('no.2 is blank')
+                    else{
+                        var a=parseFloat($('#n1').val())
+                        var b=parseFloat($('#n2').val())
+                        $('#result').val(a/b)
+                    }
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+     <form action="" style="margin:auto; width: 10%;margin-top: 50px; background-color: aliceblue; padding: 30px;border: double violet 20px;">
+        <div></div><label>Enter No.1: </label>
+        <input id="n1"></div>
+        <div> <label>Enter No.2: </label>
+            <input id="n2">
+        </div>
+        <div> <label >Result: </label>
+            <input id="result">
+        </div>
+        <br>
+        <div>
+            <input type="button" value="Addition" id="addition">
+            <input type="button" value="substract" id="substract">
+            <input type="button" value="multiply" id="multiply">
+            <input type="button" value="divide" id="divide">
+        </div>
+    </form>
+</body>
+</html>
