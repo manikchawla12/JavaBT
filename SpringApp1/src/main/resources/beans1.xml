@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="org.coforge.bean.Product">
+		<property name="prdId" value="1001"></property>
+		<property name="prdName" value="Vehicle"></property>
+		<property name="prdCost" value="98765"></property>
+		<property name="prdList">
+			<list>
+				<value>book</value>
+				<value>sweets</value>
+				<value>pizza</value>
+				<value>burger</value>
+				<value>book</value>
+			</list>
+		</property>
+
+		<property name="bikeSet">
+			<set>
+				<value>honda shine</value>
+				<value>R15</value>
+				<value>Splender</value>
+				<value>Bullet</value>
+				<value>R15</value>
+			</set>
+		</property>
+		<property name="carMap">
+			<map>
+				<entry key="Delhi" value="honda city"></entry>
+				<entry key="Gurgaon" value="Scorpio"></entry>
+				<entry key="Bathinda" value="Fortuner"></entry>
+				<entry key="Faidabad" value="Thar"></entry>
+				<entry key="Gurgaon" value="Audi"></entry>
+			</map>
+		</property>
+	</bean>
+
+
+
+
+
+
+
+</beans>

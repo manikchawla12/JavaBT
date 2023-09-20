@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+      
+      
+  datasource:
+    url: jdbc:mysql://localhost:3306/db2
+    driver-Class-Name: com.mysql.cj.jdbc.Driver
+    username: root         
+    password: root
+    
+   

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+<bean class="org.coforge.bean.User" init-method="init" destroy-method="destroy" lazy-init="true">
+<constructor-arg name="id" value="86484"></constructor-arg>
+<constructor-arg name="name" value="Manik"></constructor-arg>
+<constructor-arg name="salary" value="124710"></constructor-arg>
+</bean>
+<bean id="hello" class="org.coforge.bean.Helloimpl"></bean>
+<!-- <bean id="emp1" class="org.coforge.bean.Employee" scope="prototype" autowire="byName">  -->
+<bean id="emp1" class="org.coforge.bean.Employee" scope="prototype" autowire="byType">
+<property name="id" value="6516"></property>
+<property name="name" value="Manik"></property>
+<property name="salary" value="65401"></property>
+<!-- <property name="address" ref="address1"></property> -->
+</bean>
+
+<!-- <bean id="address" class="org.coforge.bean.Address" scope="prototype"> -->
+<bean id="address1" class="org.coforge.bean.Address" scope="prototype">
+<property name="addressId" value="20001"></property>
+<property name="addressCity" value="Greater Noida"></property>
+<property name="addressLocation" value="ALpha 1"></property>
+</bean>
+
+</beans>
+
+<!-- 
+
+<bean id="hello" class="org.coforge.bean.Helloimpl">  
+
+org.coforge.beans.Helloimpl hello=new org.cofoge.bean.Helloimpl();
+
+
+-->
