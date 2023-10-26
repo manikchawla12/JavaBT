@@ -1,39 +1,72 @@
 package com.health.model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.RestTemplate;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Transient;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="testCenter")
+@Table(name = "testCenter")
 @Data
-@NoArgsConstructor
-public class TestCenter{
-	
+//@NoArgsConstructor
+public class TestCenter {
+
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "CenterId")
 	private long centerId;
-	
-	@Column(name="centerName")
+
+	@Column(name = "centerName")
 	private String centerName;
-	
-	@Column(name="centerContact")
+
+	@Column(name = "centerContact")
 	private long centerContact;
 
-	@Column(name="centerAddress")
+	@Column(name = "centerAddress")
 	private String centerAddress;
 
-	@Column(name="centerEmail")
+	@Column(name = "centerEmail")
 	private String centerEmail;
+
+	// @OneToMany(cascade = CascadeType.ALL)
+	// @JoinColumn(name = "id", referencedColumnName = "id")
+	// @Column(name="TestsOffered")
+	@Transient
+	private List<String> testsOffered;
+	// = new ArrayList<>();
+
 	
-	@Column(name="testsOffered")
-	private String testsOffered;
 	
+	TestCenter() {
+		
+		RestTemplate restTemplate;
+		restTemplate = new RestTemplate();
+		// testsOffered
+		ResponseEntity<Tests[]> forEntity = restTemplate.getForEntity("http://localhost:9002/tests", Tests[].class);
+
+		testsOffered = new ArrayList<>();
+		Tests[] body = forEntity.getBody();
+		for (Tests tests : body) {
+			testsOffered.add(tests.getTestName());
+		}
+
+	}
 
 }

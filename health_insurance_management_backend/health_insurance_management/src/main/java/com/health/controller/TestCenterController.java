@@ -18,38 +18,38 @@ import org.springframework.web.bind.annotation.RestController;
 import com.health.model.TestCenter;
 import com.health.testCenterRepository.TestCenterRepository;
 
-
-
 @RestController
 @RequestMapping("/")
-public class TestCenterController{
-	
+public class TestCenterController {
+
 	@Autowired
 	TestCenterRepository testCenterRepository;
-	
-	@PostMapping("/testCenter")
+
+	@PostMapping("/testcenter")
 	public String createNewCenter(@RequestBody TestCenter testCenter) {
 		testCenterRepository.save(testCenter);
 		return "TestCenter database";
 	}
-	@GetMapping("/testCenter")
-	public ResponseEntity<List<TestCenter>>getAllCenters(){
-		List<TestCenter> centerList=new ArrayList<>();
+
+	@GetMapping("/testcenter")
+	public ResponseEntity<List<TestCenter>> getAllCenters() {
+		List<TestCenter> centerList = new ArrayList<>();
 		testCenterRepository.findAll().forEach(centerList::add);
-		return new ResponseEntity<List<TestCenter>>(centerList,HttpStatus.OK);
+		return new ResponseEntity<List<TestCenter>>(centerList, HttpStatus.OK);
 	}
-	@GetMapping("/testCenter/{centerId}")
-	public ResponseEntity<TestCenter> getCenterById(@PathVariable long centerId){
-	 Optional<TestCenter> center= testCenterRepository.findById(centerId);
-	 if(center.isPresent()) {
-		 return new ResponseEntity<TestCenter>(center.get(),HttpStatus.FOUND);
-	 }
-	 else {
-		 return new ResponseEntity<TestCenter>(HttpStatus.NOT_FOUND);
-	 }
+
+	@GetMapping("/testcenter/{centerId}")
+	public ResponseEntity<TestCenter> getCenterById(@PathVariable long centerId) {
+		Optional<TestCenter> center = testCenterRepository.findById(centerId);
+		if (center.isPresent()) {
+			return new ResponseEntity<TestCenter>(center.get(), HttpStatus.FOUND);
+		} else {
+			return new ResponseEntity<TestCenter>(HttpStatus.NOT_FOUND);
+		}
 	}
-	@DeleteMapping("/testCenter/{centerId}")
-	public String deleteCenterById(@PathVariable long centerId){
+
+	@DeleteMapping("/testcenter/{centerId}")
+	public String deleteCenterById(@PathVariable long centerId) {
 		testCenterRepository.deleteById(centerId);
 		return "TestCenter deleted Successfully";
 	}
