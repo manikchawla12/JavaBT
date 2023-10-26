@@ -1,0 +1,18 @@
+server:
+  port: 8999
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: tests
+        uri: http://localhost:9002/
+        predicates:
+        - Path=/tests/**
+      - id: testcenter
+        uri: http://localhost:9001/
+        predicates:
+        - Path=/testcenter/**
+  application:
+    name: apigateway
+         
