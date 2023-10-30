@@ -1,0 +1,4 @@
+com\health\model\Tests.class
+com\health\testsRepository\TestsRepository.class
+com\health\controller\TestsController.class
+com\health\TestsApiApplication.class
