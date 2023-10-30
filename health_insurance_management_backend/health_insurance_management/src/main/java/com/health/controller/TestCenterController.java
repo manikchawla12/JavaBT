@@ -7,6 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,6 +20,7 @@ import com.health.model.TestCenter;
 import com.health.testCenterRepository.TestCenterRepository;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/")
 public class TestCenterController {
 
@@ -38,9 +40,9 @@ public class TestCenterController {
 		return new ResponseEntity<List<TestCenter>>(centerList, HttpStatus.OK);
 	}
 
-	@GetMapping("/testcenter/{centerId}")
-	public ResponseEntity<TestCenter> getCenterById(@PathVariable long centerId) {
-		Optional<TestCenter> center = testCenterRepository.findById(centerId);
+	@GetMapping("/testcenter/{id}")
+	public ResponseEntity<TestCenter> getCenterById(@PathVariable long id) {
+		Optional<TestCenter> center = testCenterRepository.findById(id);
 		if (center.isPresent()) {
 			return new ResponseEntity<TestCenter>(center.get(), HttpStatus.FOUND);
 		} else {
@@ -48,9 +50,9 @@ public class TestCenterController {
 		}
 	}
 
-	@DeleteMapping("/testcenter/{centerId}")
-	public String deleteCenterById(@PathVariable long centerId) {
-		testCenterRepository.deleteById(centerId);
+	@DeleteMapping("/testcenter/{id}")
+	public String deleteCenterById(@PathVariable long id) {
+		testCenterRepository.deleteById(id);
 		return "TestCenter deleted Successfully";
 	}
 }

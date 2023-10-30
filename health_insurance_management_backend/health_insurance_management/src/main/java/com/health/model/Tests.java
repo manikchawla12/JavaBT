@@ -19,7 +19,7 @@ public class Tests implements Serializable{
 	
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long testsId;
+	private long id;
 	
 	//@Column(name="testName")
 	private String testName;

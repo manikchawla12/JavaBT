@@ -30,8 +30,8 @@ public class TestCenter {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "CenterId")
-	private long centerId;
+	@Column(name = "id")
+	private long id;
 
 	@Column(name = "centerName")
 	private String centerName;
